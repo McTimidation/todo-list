@@ -7,20 +7,18 @@ import ListGroup from './ListGroup';
 function App() {
     const [state, setState] = useState('login')
     const [toDoList, setToDoList] = useState([]);
+    // const [nextId, setNextId] = useState(0);
 
-    let nextId = 0;
+    function AddTask(value) {
+        console.log(toDoList, 'AddTask')
+        setToDoList([...toDoList, {id: Date.now(), task: value, complete: false}])
 
-    function addTask() {
-        setToDoList([...toDoList, {id: nextId++, task: {task}, complete: false}])
-    }
-    function handleClick() {
-        addTask();
     }
     return (
         <div id="header" className='text-center'>
             <h1>To Do List</h1>
             
-            <InputForm handleClick={handleClick} userInput={userInput}/>
+            <InputForm AddTask={AddTask} toDoList={toDoList} setToDoList={setToDoList}/>
             <ListGroup toDoList={toDoList}/>
 
         </div>

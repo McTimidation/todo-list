@@ -1,13 +1,14 @@
 import ListItem from './ListItem';
 import InputForm from './input';
 
-function ListGroup(props) {
-
+function ListGroup({ toDoList }) {
+console.log(toDoList, 'ListGroup')
     return (
         <div>
-            {props.toDoList.map(task => {
+            {toDoList.map(task => {
                 return (
-                    <ListItem task={task} />
+                    
+                    <ListItem key={task.id} task={task.task} />
                 )
             })}
             

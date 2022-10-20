@@ -5,12 +5,12 @@ import  ListItem from './ListItem';
 
 
 
-function InputForm(props) {
-    
+function InputForm({ AddTask, toDoList, setToDoList }) {
+    const [value, setValue] = useState('');
     return (
         <>
-            <input value={props.userInput}></input>
-            <button className="addBtn" >Add</button>
+            <input onChange={(e) => setValue(e.target.value)}></input>
+            <button className="" onClick={() => AddTask(value)}>Add</button>
         </>
     )
 }
