@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+
 
 
 
@@ -7,29 +7,20 @@ import { useState } from 'react';
 function Footer({ setView, toDoList, setToDoList, view }) {
 
     function handleClick(e) {
-        // const unchecked = toDoList.filter(x => !x.complete);
-        // console.log(unchecked);
-        // const checked = toDoList.filter(x => x.complete)
-        // console.log(checked)
-        // const all = [...toDoList];
-        // console.log(all)
+        
         const id = e.target.id;
         setView(id)
-        // switch (id) {
-        //     case 'todos':
-        //         setToDoList(unchecked)
-        //         break;
-        //     case 'complete':
-        //         setToDoList(checked)
-        //         break;
-        //     case 'all':
-        //         setToDoList(all);
-        // }
+
     }
 
+
+
 function allHandleClick(e) {
+    // targets id of buttons
     if (e.target.id === 'checkAll'){
+        // checks to see if every item has specified value
         if( toDoList.every(item => item.complete === true)) {
+            // if true, flips that value
             let uncheckAll = toDoList.map(task => {
                 return {...task, complete: false} } ); 
                 setToDoList(uncheckAll);

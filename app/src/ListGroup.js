@@ -1,7 +1,7 @@
 import ListItem from './ListItem';
 
 
-function ListGroup({ state, setToDoList, toDoList }) {
+function ListGroup({ setToDoList, toDoList }) {
     return (
         <div>
 

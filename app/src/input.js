@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import  ListItem from './ListItem';
+import { useState } from 'react';
 
 
 
 
-function InputForm({ AddTask, toDoList, setToDoList }) {
+
+function InputForm({ AddTask}) {
     const [value, setValue] = useState('');
 
 
