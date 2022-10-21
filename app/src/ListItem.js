@@ -1,12 +1,12 @@
 import InputForm from "./input";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, state, setState } from 'react';
 
 function ListItem({ task, setToDoList, toDoList, id, complete }) {
 
 
     function ClickToggle({ id }) {
         let toggled = toDoList.map(task => {
-        return task.id == id ? { ...task, complete: !task.complete } : { ...task};
+        return task.id === id ? { ...task, complete: !task.complete } : { ...task};
         
         })
         setToDoList(toggled);

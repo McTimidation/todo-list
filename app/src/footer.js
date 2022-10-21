@@ -10,23 +10,10 @@ import { useState } from 'react';
 // }
 
 
-function Footer({ toDoList, setToDoList}) {
-    const [ view, setView ] = useState('all');
+function Footer({ setView, toDoList, setToDoList, state, setState}) {
 
 
-    switch (view) {
-        case 'todos':
-            let unchecked = toDoList.filter(x => !x.complete) 
-            setToDoList(unchecked);
-            break;
-        case 'complete':
-            let checked = toDoList.filter(x => !x.complete)
-            setToDoList(checked);
-            break;
-        default:
-            setToDoList(toDoList);
 
-    }
 
 
     return (

@@ -1,9 +1,10 @@
 import ListItem from './ListItem';
-import InputForm from './input';
 
-function ListGroup({ toDoList, setToDoList }) {
+
+function ListGroup({ state, setToDoList, toDoList }) {
     return (
         <div>
+
             {toDoList.map(task => {
                 return (
                     

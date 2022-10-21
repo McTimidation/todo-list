@@ -6,12 +6,27 @@ import Footer from './footer';
 
 
 function App() {
+    const [state, setState] = useState([]);
     const [toDoList, setToDoList] = useState(() => {
         return JSON.parse(localStorage.getItem('todos')) ||
         []
     });
-    
+    const [ view, setView ] = useState('all');
 
+
+    // switch (view) {
+    //     case 'todos':
+    //         let unchecked = toDoList.filter(x => !x.complete)
+    //         setState(unchecked)
+    //         break;
+    //     case 'complete':
+    //         let checked = toDoList.filter(x => !x.complete)
+    //         setState(checked)
+    //         break;
+    //     default:
+    //         let all = [...toDoList]
+    //             setState(all)
+    //  }
    
 useEffect(() => {
     
@@ -30,9 +45,22 @@ useEffect(() => {
         <div id="header" className='text-center'>
             <h1>To Do List</h1>
             
-            <InputForm AddTask={AddTask} toDoList={toDoList} setToDoList={setToDoList}/>
-            <ListGroup setToDoList={setToDoList} toDoList={toDoList}/>
-            <Footer toDoList={toDoList} setToDoList={setToDoList} />
+            <InputForm 
+            AddTask={AddTask} 
+            toDoList={toDoList} 
+            setToDoList={setToDoList}
+            />
+            <ListGroup 
+            setToDoList={setToDoList} 
+            toDoList={toDoList}
+            />
+            <Footer 
+            toDoList={toDoList} 
+            setToDoList={setToDoList} 
+            state={state} 
+            setState={setState} 
+            setView={setView}
+            />
 
         </div>
 
