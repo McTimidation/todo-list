@@ -1,13 +1,12 @@
 import ListItem from './ListItem';
-import InputForm from './input';
 
-function ListGroup({ toDoList, setToDoList }) {
-console.log(toDoList, 'ListGroup')
+
+function ListGroup({ state, setToDoList, toDoList }) {
     return (
         <div>
+
             {toDoList.map(task => {
                 return (
-                    
                     <ListItem 
                     setToDoList={setToDoList} 
                     key={task.id} 
@@ -16,9 +15,10 @@ console.log(toDoList, 'ListGroup')
                     toDoList={toDoList}
                     complete={task.complete}
                     />
+                
                 )
             })}
-            
+            Total:{toDoList.length}
         </div>
     )
 }
