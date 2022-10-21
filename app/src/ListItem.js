@@ -26,7 +26,7 @@ function RemoveItem({ id }) {
     return (
 
         <div className={complete ? 'strike' : ''}>
-            <input id={id} className="form-check-input" type="checkbox" value="" onClick={(e) => ClickToggle({id})}></input>
+            <input id={id} className="form-check-input" type="checkbox" checked={complete} onChange={(e) => ClickToggle({id})}></input>
             {task} 
             <button type="button" className="btn-close" aria-label="Close" onClick={(e) => RemoveItem({id})}></button>
         </div>

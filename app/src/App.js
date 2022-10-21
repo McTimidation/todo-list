@@ -29,6 +29,13 @@ useEffect(() => {
                     complete: false}])
     }
 
+    let renderedTodos = toDoList;
+    if (view === 'todos') {
+        renderedTodos = toDoList.filter(x => !x.complete);
+    } else if (view === 'complete') {
+        renderedTodos = toDoList.filter(x => x.complete);
+    }
+
     return (
         <div id="header" className='text-center'>
             <h1>To Do List</h1>
@@ -40,7 +47,7 @@ useEffect(() => {
             />
             <ListGroup 
             setToDoList={setToDoList} 
-            toDoList={toDoList}
+            toDoList={renderedTodos}
             />
             <Footer 
             toDoList={toDoList} 

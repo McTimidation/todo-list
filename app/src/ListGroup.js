@@ -7,7 +7,6 @@ function ListGroup({ state, setToDoList, toDoList }) {
 
             {toDoList.map(task => {
                 return (
-                    
                     <ListItem 
                     setToDoList={setToDoList} 
                     key={task.id} 
@@ -16,9 +15,10 @@ function ListGroup({ state, setToDoList, toDoList }) {
                     toDoList={toDoList}
                     complete={task.complete}
                     />
+                
                 )
             })}
-            
+            Total:{toDoList.length}
         </div>
     )
 }
