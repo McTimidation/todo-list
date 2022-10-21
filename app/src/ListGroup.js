@@ -2,7 +2,6 @@ import ListItem from './ListItem';
 import InputForm from './input';
 
 function ListGroup({ toDoList, setToDoList }) {
-console.log(toDoList, 'ListGroup')
     return (
         <div>
             {toDoList.map(task => {

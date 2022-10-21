@@ -5,9 +5,7 @@ function ListItem({ task, setToDoList, toDoList, id, complete }) {
 
 
     function ClickToggle({ id }) {
-        console.log('clicktoggle',id);
         let toggled = toDoList.map(task => {
-            console.log(task.id, id)
         return task.id == id ? { ...task, complete: !task.complete } : { ...task};
         
         })
@@ -16,7 +14,6 @@ function ListItem({ task, setToDoList, toDoList, id, complete }) {
 }
 
 function RemoveItem({ id }) {
-    console.log('remove',id);
     setToDoList(toDoList.filter(t => 
         t.id !== id
     ))
