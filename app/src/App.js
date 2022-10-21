@@ -14,19 +14,7 @@ function App() {
     const [ view, setView ] = useState('all');
 
 
-    // switch (view) {
-    //     case 'todos':
-    //         let unchecked = toDoList.filter(x => !x.complete)
-    //         setState(unchecked)
-    //         break;
-    //     case 'complete':
-    //         let checked = toDoList.filter(x => !x.complete)
-    //         setState(checked)
-    //         break;
-    //     default:
-    //         let all = [...toDoList]
-    //             setState(all)
-    //  }
+    
    
 useEffect(() => {
     
